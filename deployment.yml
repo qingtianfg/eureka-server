@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: eureka-server
+spec:
+  selector:
+    app: eurekaserver
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8791
+      targetPort: 8791
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-eureka-server
+  labels:
+    app: eurekaserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eurekaserver
+  template:
+    metadata:
+      labels:
+        app: eurekaserver
+    spec:
+      imagePullSecrets:
+        - name: pipeline-docker-registry
+      containers:
+        - name: eurekaserver
+          image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+          ports:
+            - containerPort: 8791
