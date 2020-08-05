@@ -10,7 +10,7 @@ stages:
 - name: 部署
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./deployment.yml
     env:
       CICD_EXECUTION_SEQUENCE: latest
       CICD_IMAGE: myEureka
