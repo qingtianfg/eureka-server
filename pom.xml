@@ -69,7 +69,7 @@
                 </configuration>
             </plugin>
             <!-- docker 打包插件 -->
-            <plugin>
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.13</version>
@@ -86,14 +86,14 @@
                     <username>cfg2018</username>
                     <password>qwer1234</password>
                     <repository>cfg2018/eureka-server</repository>
-                    <!--<tag>${project.version}</tag>-->
+                    &lt;!&ndash;<tag>${project.version}</tag>&ndash;&gt;
                     <tag>latest</tag>
                     <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
