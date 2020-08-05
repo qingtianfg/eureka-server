@@ -1,0 +1,23 @@
+stages:
+- name: build
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./
+      buildContext: .
+      tag: myEureka
+      pushRemote: true
+      registry: 10.10.66.49:9081
+- name: 部署
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+    env:
+      CICD_EXECUTION_SEQUENCE: latest
+      CICD_IMAGE: myEureka
+timeout: 60
+notification:
+  recipients:
+  - recipient: chenfg@yonyou.com
+    notifier: c-4dkhv:n-mzm72
+  condition:
+  - Changed
