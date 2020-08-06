@@ -10,8 +10,8 @@ stages:
 - name: 部署
   steps:
   - publishImageConfig:
-      dockerfilePath: ./
-      buildContext: .
+      dockerfilePath: eureka-server/
+      buildContext: .eureka-server
       tag: myeureka:latest
       pushRemote: true
       registry: 10.10.66.49:9081
