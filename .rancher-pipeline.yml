@@ -21,7 +21,7 @@ stages:
 - name: 部署应用
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./deployment.yml
 timeout: 60
 notification:
   recipients:
