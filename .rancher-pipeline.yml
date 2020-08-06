@@ -7,9 +7,6 @@ stages:
         pwd
         ls -al
         mvn install -Dmaven.test.skip=true
-        docker build -t myeureka .
-        docker tag myeureka:latest 10.10.66.49:9081/sbfx/myeureka:latest
-        docker push 10.10.66.49:9081/sbfx/myeureka:latest
 - name: 部署
   steps:
   - publishImageConfig:
