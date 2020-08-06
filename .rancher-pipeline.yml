@@ -11,13 +11,12 @@ stages:
   steps:
   - publishImageConfig:
       dockerfilePath: dockerfile
-      buildContext: .eureka-server
       tag: myeureka:latest
       pushRemote: true
       registry: 10.10.66.49:9081
     env:
-      PLUGIN_DEBUG: true
-      PLUGIN_INSECURE: true
+      PLUGIN_DEBUG: "true"
+      PLUGIN_INSECURE: "true"
 - name: 部署应用
   steps:
   - applyYamlConfig:
