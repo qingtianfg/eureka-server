@@ -6,7 +6,6 @@ stages:
       shellScript: |-
         pwd
         ls -al
-        cd eureka-server
         mvn install -Dmaven.test.skip=true
         docker build -t myeureka .
         docker tag myeureka:latest 10.10.66.49:9081/sbfx/myeureka:latest
