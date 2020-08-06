@@ -10,7 +10,7 @@ MAINTAINER cfg <chenfugui2013@163.com>
 VOLUME /tmp
 ARG JAR_FILE
 # 将jar包添加到容器中并更名为app.jar
-ADD target/${JAR_FILE} /app.jar
+ADD target/eurekatest.jar /app.jar
 # 运行jar包
 RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
