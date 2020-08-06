@@ -10,7 +10,7 @@ stages:
 - name: 部署
   steps:
   - applyYamlConfig:
-      path: ./deployment.yml
+      path: ./deployment.yaml
     env:
       CICD_EXECUTION_SEQUENCE: latest
       CICD_IMAGE: 10.10.66.49:9081/sbfx/myeureka:latest
