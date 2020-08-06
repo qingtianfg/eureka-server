@@ -1,19 +1,20 @@
 stages:
 - name: build
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./
-      buildContext: .
-      tag: myEureka
-      pushRemote: true
-      registry: 10.10.66.49:9081
+  - runScriptConfig:
+      image: java:8
+      shellScript: |-
+        mvn install -Dmaven.test.skip=true
+        docker build -t myeureka .
+        docker tag myeureka:latest 10.10.66.49:9081/sbfx/myeureka:latest
+        docker push 10.10.66.49:9081/sbfx/myeureka:latest
 - name: 部署
   steps:
   - applyYamlConfig:
       path: ./deployment.yml
     env:
       CICD_EXECUTION_SEQUENCE: latest
-      CICD_IMAGE: myEureka
+      CICD_IMAGE: 10.10.66.49:9081/sbfx/myeureka:latest
 timeout: 60
 notification:
   recipients:
