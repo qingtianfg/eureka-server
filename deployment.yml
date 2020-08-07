@@ -31,6 +31,6 @@ spec:
         - name: pipeline-docker-registry
       containers:
         - name: eurekaserver
-          image: 10.10.66.49:9081/sbfx/myeureka:latest
+          image: 10.10.66.49:9081/sbfx/myeureka:v1.0
           ports:
             - containerPort: 8791
