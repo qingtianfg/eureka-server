@@ -12,7 +12,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: myeureka:latest
+      tag: myeureka:v1.0
       pushRemote: true
       registry: 10.10.66.49:9081
     env:
