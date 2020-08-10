@@ -2,7 +2,7 @@
 # VERSION 0.0.1
 # Author: eangulee
 # 基础镜像使用java
-FROM java:8
+FROM 10.10.66.49:9081/sbfx/java:8
 # 作者
 MAINTAINER cfg <chenfugui2013@163.com>
 # VOLUME 指定了临时文件目录为/tmp。
