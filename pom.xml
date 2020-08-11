@@ -20,6 +20,16 @@
     </properties>
     <repositories>
         <repository>
+            <id>ufgov</id>
+            <name>ufgov_maven</name>
+            <url>http://maven.ufgov.com.cn/nexus/content/groups/crux</url>
+        </repository>
+        <repository>
+            <id>dmp</id>
+            <name>dmp_maven</name>
+            <url>http://10.15.0.207:8081/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
             <id>alimaven</id>
             <name>aliyun maven</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
