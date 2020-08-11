@@ -25,6 +25,9 @@ stages:
   - applyYamlConfig:
       path: ./servicedep.yml
 timeout: 60
+branch:
+  include:
+  - master
 notification:
   recipients:
   - recipient: chenfg@yonyou.com
