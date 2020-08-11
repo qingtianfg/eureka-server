@@ -15,7 +15,7 @@ import java.util.Map;
 @RestController
 public class HelloWorld {
 
-    @RequestMapping("hello")
+    @RequestMapping(value = "hello", produces = {"application/json;charset=UTF-8"})
     public Object helloworld(HttpServletRequest req){
         String ip = req.getLocalAddr();
         String port = String.valueOf(req.getLocalPort());
