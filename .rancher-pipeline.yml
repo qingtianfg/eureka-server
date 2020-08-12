@@ -14,7 +14,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: sbfx/myeureka:${CICD_EXECUTION_SEQUENCE}
+      tag: sbfx/myeureka:v1.${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: 10.10.66.49:9081
     env:
@@ -25,7 +25,7 @@ stages:
   - applyYamlConfig:
       path: ./deployment.yml
     env:
-      CICD_GIT_TAG: ${CICD_EXECUTION_SEQUENCE}
+      CICD_GIT_TAG: v1.${CICD_EXECUTION_SEQUENCE}
   - applyYamlConfig:
       path: ./servicedep.yml
 timeout: 60
