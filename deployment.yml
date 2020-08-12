@@ -18,6 +18,6 @@ spec:
         - name: pipeline-docker-registry
       containers:
         - name: eurekaserver
-          image: 10.10.66.49:9081/sbfx/myeureka:v1.0
+          image: 10.10.66.49:9081/sbfx/myeureka:${CICD_GIT_TAG}
           ports:
             - containerPort: 8791
