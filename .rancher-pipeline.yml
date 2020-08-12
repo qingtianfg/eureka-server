@@ -12,7 +12,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: sbfx/myeureka:v1.0
+      tag: sbfx/myeureka:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: 10.10.66.49:9081
     env:
