@@ -7,6 +7,10 @@ stages:
         pwd
         ls -al
         mvn install -Dmaven.test.skip=true
+  when:
+    event:
+      include:
+      - tag
 - name: 部署
   steps:
   - publishImageConfig:
