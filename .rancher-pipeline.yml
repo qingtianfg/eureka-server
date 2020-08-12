@@ -22,6 +22,8 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yml
+    env:
+      CICD_EXECUTION_SEQUENCE: ${CICD_EXECUTION_SEQUENCE}
   - applyYamlConfig:
       path: ./servicedep.yml
 timeout: 60
