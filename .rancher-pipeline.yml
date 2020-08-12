@@ -8,15 +8,13 @@ stages:
         ls -al
         mvn install -Dmaven.test.skip=true
   when:
-    event:
-      include:
-      - tag
+    event: {}
 - name: 部署
   steps:
   - publishImageConfig:
       dockerfilePath: ./dockerfile
       buildContext: .
-      tag: sbfx/myeureka:${CICD_GIT_TAG}
+      tag: sbfx/myeureka:${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: 10.10.66.49:9081
     env:
@@ -27,7 +25,7 @@ stages:
   - applyYamlConfig:
       path: ./deployment.yml
     env:
-      CICD_GIT_TAG: ${CICD_GIT_TAG}
+      CICD_GIT_TAG: ${CICD_EXECUTION_SEQUENCE}
   - applyYamlConfig:
       path: ./servicedep.yml
 timeout: 60
